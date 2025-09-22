@@ -125,16 +125,13 @@ class _ClickTooltipState extends State<ClickTooltip> {
 }
 
 class _TooltipShapeBorder extends ShapeBorder {
-  final double arrowWidth;
-  final double arrowHeight;
+  final double arrowWidth = 16.0;
+  final double arrowHeight = 8.0;
   final double arrowOffset;
-  final Radius radius;
+  final Radius radius = const Radius.circular(8.0);
 
   const _TooltipShapeBorder({
-    this.arrowWidth = 16.0,
-    this.arrowHeight = 8.0,
-    this.arrowOffset = 0.0,
-    this.radius = const Radius.circular(8.0),
+    this.arrowOffset = 0.0
   });
 
   @override
