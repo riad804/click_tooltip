@@ -4,6 +4,7 @@ class ClickTooltip extends StatefulWidget {
   final Widget tipContent;
   final Widget child;
   final double tooltipHeight;
+  final double tooltipWidth;
   final Color shapeColor;
   final Color shadowColor;
 
@@ -12,6 +13,7 @@ class ClickTooltip extends StatefulWidget {
     required this.child,
     required this.tipContent,
     this.tooltipHeight = 60,
+    this.tooltipWidth = 237,
     this.shapeColor = Colors.white,
     this.shadowColor = Colors.black12
   });
@@ -23,7 +25,6 @@ class ClickTooltip extends StatefulWidget {
 class _ClickTooltipState extends State<ClickTooltip> {
   OverlayEntry? _overlayEntry;
   final GlobalKey _widgetKey = GlobalKey();
-  double toolTipWidth = 237;
 
   void _showTooltip() {
     final renderBox =
@@ -39,7 +40,7 @@ class _ClickTooltipState extends State<ClickTooltip> {
     final widgetSize = renderBox.size;
 
     const double triangleHeight = 8.0;
-    final double tooltipWidth = toolTipWidth;
+    final double tooltipWidth = widget.tooltipWidth;
     final double tooltipHeightEstimate = widget.tooltipHeight + triangleHeight;
 
     double tooltipLeft =
