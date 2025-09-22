@@ -12,8 +12,9 @@ publish:
 	@if [ -z "$(v)" ]; then \
 		echo "Usage: make publish v=1.0.0"; exit 1; \
 	fi
-	git tag v$(v)
-	git push origin v$(v)
+# 	git tag v$(v)
+# 	git push origin v$(v)
+	dart pub publish
 
 deleteTag:
 	@if [ -z "$(v)" ]; then \
